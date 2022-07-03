@@ -15,7 +15,8 @@ function Enter() {
         var CurentUser = users.find((u) => u.email === mail);
         if (CurentUser != null) {
           localStorage.setItem("U", JSON.stringify(CurentUser));
-          window.location.href = "User.html";
+          // window.location.href = "User.html";
+          window.location.href = `User.html?userId=${CurentUser.id}`;
         }
       }
     }

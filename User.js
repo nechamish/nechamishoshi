@@ -1,4 +1,6 @@
 function Data() {
+  // const params = new URLSearchParams(window.location.search);
+  // const id = params.get("userId");
   const s = localStorage["U"];
   var mtDate = JSON.parse(s);
   var v1 = mtDate.firstName;
@@ -8,6 +10,7 @@ function Data() {
   var v5 = mtDate.phone;
   var v6 = mtDate.hight;
   var v7 = mtDate.weight;
+ 
   document.getElementById("name").value = v1;
   document.getElementById("lastname").value = v2;
   document.getElementById("Adress").value =
@@ -22,4 +25,11 @@ function Bmi() {
   let h = document.getElementById("height").value;
   let w = document.getElementById("weight").value;
   document.getElementById("cal").value = w / (h ^ 2);
+}
+
+function openUrl()
+{
+ const params = new URLSearchParams(window.location.search);
+ const id = params.get("userId");
+ window.location.href = `MyDairy?userId=${id}`;
 }
